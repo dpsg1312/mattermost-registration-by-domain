@@ -1,0 +1,16 @@
+name: 'mattermost-registration'
+
+services:
+  mattermost-registration:
+    image: ghcr.io/jonas-de/mattermost-registration-by-domain:latest
+    restart: unless-stopped
+    networks:
+      - proxy
+    env_file:
+      - stack.env
+
+networks:
+  proxy:
+    external: true
+
+
