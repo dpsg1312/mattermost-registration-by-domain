@@ -1,10 +1,11 @@
 import Image from "next/image"
 import Link from "next/link"
-
+import { unstable_noStore as noStore } from 'next/cache';
 import {NextPage} from "next";
 import RegistrationForm from "@/app/form";
 
 const HomePage: NextPage = () => {
+  noStore();
   return (
     <div className="w-full lg:grid lg:min-h-[600px] lg:grid-cols-2 xl:min-h-[800px]">
       <div className="flex items-center justify-center py-12">
