@@ -2,7 +2,7 @@ name: 'mattermost-registration'
 
 services:
   mattermost-registration:
-    image: ghcr.io/jonas-de/mattermost-registration-by-domain:latest
+    image: ghcr.io/dpsg1312/mattermost-registration-by-domain:latest
     restart: unless-stopped
     networks:
       - proxy

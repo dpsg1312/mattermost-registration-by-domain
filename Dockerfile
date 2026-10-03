@@ -1,7 +1,7 @@
 # From https://github.com/vercel/next.js/blob/canary/examples/with-docker/Dockerfile
 
 FROM node:24-alpine AS base
-LABEL org.opencontainers.image.source="https://github.com/jonas-de/mattermost-registration-by-domain"
+LABEL org.opencontainers.image.source="https://github.com/dpsg1312/mattermost-registration-by-domain"
 
 # Install dependencies only when needed
 FROM base AS deps
