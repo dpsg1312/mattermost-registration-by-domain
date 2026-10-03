@@ -6,7 +6,7 @@ import {Button, buttonVariants} from "@/components/ui/button";
 import React from "react";
 import requestTeamInvite from "@/app/requestTeamInvite";
 import {Alert, AlertDescription, AlertTitle} from "@/components/ui/alert";
-import {AlertCircle, Check} from "lucide-react";
+import {CircleAlert, Check} from "lucide-react";
 
 const RegistrationForm: React.FC<{ loginURL?: string, mailPlaceholder?: string }> = ({ loginURL, mailPlaceholder }) => {
 
@@ -44,7 +44,7 @@ const RegistrationForm: React.FC<{ loginURL?: string, mailPlaceholder?: string }
     <form className="grid gap-4" onSubmit={onSubmit}>
       { state === 'error' && (
         <Alert variant="destructive" className="text-start">
-          <AlertCircle className="h-4 w-4" />
+          <CircleAlert className="h-4 w-4" />
           <AlertTitle>Fehler</AlertTitle>
           <AlertDescription>
             {error}

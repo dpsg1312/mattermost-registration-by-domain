@@ -1,11 +1,11 @@
 import Image from "next/image"
 import Link from "next/link"
-import { unstable_noStore as noStore } from 'next/cache';
-import {NextPage} from "next";
+import { connection } from "next/server";
 import RegistrationForm from "@/app/form";
 
-const HomePage: NextPage = () => {
-  noStore();
+const HomePage = async () => {
+  // Render at request time so runtime env vars are picked up in the Docker image
+  await connection();
   return (
     <div className="w-full lg:grid lg:min-h-[600px] lg:grid-cols-2 xl:min-h-[800px]">
       <div className="flex items-center justify-center py-12">
@@ -17,6 +17,7 @@ const HomePage: NextPage = () => {
                 alt="Image"
                 width="200"
                 height="200"
+                unoptimized
                 className="lg:hidden mx-auto pb-8"
               />
             )}
@@ -42,7 +43,8 @@ const HomePage: NextPage = () => {
           alt="Image"
           width="500"
           height="500"
-          className="mx-auto align-middle max-w-[500] max-h-[500] object-center"
+          unoptimized
+          className="mx-auto align-middle max-w-[500px] max-h-[500px] object-center"
         />
       </div>
         )}
